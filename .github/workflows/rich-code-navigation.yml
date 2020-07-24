@@ -12,10 +12,19 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Run Umbraco Build Script with Powershell
-      working-directory: 'build'
-      run: .\build.ps1
-      shell: powershell
+    - name: Run npm install on client files
+      working-directory: 'src/Umbraco.Web.UI.Client'
+      run: npm install
+      
+    - name: Setup NuGet.exe for use with actions
+      uses: NuGet/setup-nuget@v1.0.2
+      with:
+        # NuGet version to install. Can be `latest`, `preview`, a concrete version like `5.3.1`, or a semver range specifier like `5.x`.
+        nuget-version: 'latest'
+      
+    - name: Nuget restore
+      working-directory: 'src'
+      run: nuget restore
 
     - name: Microsoft Rich Code Navigation Indexer
       uses: microsoft/RichCodeNavIndexer@v0.1
