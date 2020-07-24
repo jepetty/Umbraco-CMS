@@ -6,7 +6,7 @@ on:
     branches: [ v8/dev ]
 
 jobs:
-  RichNavigation:
+  Rich-Navigation:
     runs-on: windows-latest
 
     steps:
