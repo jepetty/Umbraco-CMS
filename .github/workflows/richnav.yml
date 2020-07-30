@@ -3,7 +3,7 @@ name: Microsoft Rich Code Navigation
 on:
   pull_request:
   push:
-    branches: [ v8/dev, v8/contri ]
+    branches: [ v8/dev, v8/contrib ]
 
 jobs:
   Rich-Navigation:
