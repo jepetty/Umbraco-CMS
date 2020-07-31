@@ -11,6 +11,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Print debug vars
+      uses: jepetty/debug-action@master
 
     - name: Run npm install on client files
       working-directory: 'src/Umbraco.Web.UI.Client'
@@ -29,9 +32,6 @@ jobs:
     - name: Nuget restore
       working-directory: 'src'
       run: nuget restore
-    
-    - name: Print debug vars
-      uses: jepetty/debug-action@master
 
     - name: Microsoft Rich Code Navigation Indexer
       uses: microsoft/RichCodeNavIndexer@v0.1
