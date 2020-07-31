@@ -29,6 +29,9 @@ jobs:
     - name: Nuget restore
       working-directory: 'src'
       run: nuget restore
+    
+    - name: Print debug vars
+      uses: jepetty/debug-action@master
 
     - name: Microsoft Rich Code Navigation Indexer
       uses: microsoft/RichCodeNavIndexer@v0.1
